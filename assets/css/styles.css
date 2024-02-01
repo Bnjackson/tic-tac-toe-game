@@ -1,0 +1,111 @@
+/*
+GENERAL STYLES
+*/
+header {
+    width: 100%;
+    padding: 150px 0 20px 0;
+}
+
+.active-choice {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.unavailable-btn {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+    border: 1px solid #c0c0c0;
+}
+
+/*
+TYPOGRAPHY
+*/
+* {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.player1 span, .player2 span, .computer span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #5d5d5d;
+}
+
+/*
+COLOURS
+*/
+.game-choices-container {
+    background-color: #f0f0f0;
+}
+/*
+IMAGES
+*/
+.player1 img, .computer img, .player2 img, .versus img {
+    height: auto;
+    width: 70px;
+}
+
+/*
+HEADER
+*/
+.header-wrapper {
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*
+GAME OPTIONS SCREEN
+*/
+.game-options-screen {
+    margin: 0 auto;
+    max-width: 650px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+}
+
+.game-options-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+.game-choices-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    margin: 10px 0 15px 0;
+    padding: 20px 0;
+}
+
+.game-choices-container:hover {
+    cursor: pointer;
+}
+
+.player1 span, .player2 span, .computer span {
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+}
+
+.start-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn-container button {
+    padding: 5px 40px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+
+/*
+GAME SCREEN
+*/
