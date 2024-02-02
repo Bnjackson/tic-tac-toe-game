@@ -6,6 +6,11 @@ header {
     padding: 150px 0 20px 0;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
 .active-choice {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -15,6 +20,20 @@ header {
     color: #a0a0a0;
     cursor: not-allowed;
     border: 1px solid #c0c0c0;
+}
+
+.cross-placed {
+    background-image: url("../images/cross.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nought-placed {
+    background-image: url("../images/nought.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /*
@@ -46,6 +65,11 @@ IMAGES
 .player1 img, .computer img, .player2 img, .versus img {
     height: auto;
     width: 70px;
+}
+
+.info img {
+    height: auto;
+    width: 30px;
 }
 
 /*
@@ -109,3 +133,35 @@ GAME OPTIONS SCREEN
 /*
 GAME SCREEN
 */
+.game-screen {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+}
+
+.gameboard {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.game-square {
+    width: 100%;
+    padding-top: 100%;
+    background-color: #e2e8f0;
+}
