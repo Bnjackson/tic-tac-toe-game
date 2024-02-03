@@ -15,35 +15,35 @@
         </header>
         <main>
             <div class="game-options-screen">
-                <section>
-                    <div class="game-choices-container">
-                        <div class="player1">
-                            <img src="./assets/images/soccer-player.png" alt="Player 1 icon">
-                            <span>Player 1</span>
+                <section class="game-options-section">
+                    <div id="playerVsComputer" class="game-choices-container playerVsComputer">
+                        <div class="player1 playerVsComputer">
+                            <img class="playerVsComputer" src="./assets/images/soccer-player.png" alt="Player 1 icon">
+                            <span class="playerVsComputer">Player 1</span>
                         </div>
                         <div class="versus">
-                            <img src="./assets/images/versus.png" alt="Versus icon">
+                            <img class="playerVsComputer" src="./assets/images/versus.png" alt="Versus icon">
                         </div>
                         <div class="computer">
-                            <img src="./assets/images/computer-chip-svgrepo-com.svg" alt="Computer opponent icon">
-                            <span>Computer</span>
+                            <img class="playerVsComputer" src="./assets/images/computer-chip-svgrepo-com.svg" alt="Computer opponent icon">
+                            <span class="playerVsComputer">Computer</span>
                         </div>
                     </div>
-                    <div class="game-choices-container">
-                        <div class="player1">
-                            <img src="./assets/images/soccer-player.png" alt="Player 1 icon">
-                            <span>Player 1</span>
+                    <div id="playerVsPlayer" class="game-choices-container playerVsPlayer">
+                        <div class="player1 playerVsPlayer">
+                            <img class="playerVsPlayer" src="./assets/images/soccer-player.png" alt="Player 1 icon">
+                            <span class="playerVsPlayer">Player 1</span>
                         </div>
-                        <div class="versus">
-                            <img src="./assets/images/versus.png" alt="Versus icon">
+                        <div class="versus playerVsPlayer">
+                            <img class="playerVsPlayer" src="./assets/images/versus.png" alt="Versus icon">
                         </div>
-                        <div class="player2">
-                            <img src="./assets/images/soccer-player.png" alt="Player 2 icon">
-                            <span>Player 2</span>
+                        <div class="player2 playerVsPlayer">
+                            <img class="playerVsPlayer" src="./assets/images/soccer-player.png" alt="Player 2 icon">
+                            <span class="playerVsPlayer">Player 2</span>
                         </div>
                     </div>
                     <div class="start-btn-container">
-                        <button class="unavailable-btn">Start</button>
+                        <button type="button" id="startGameBtn" class="unavailable-btn">Start</button>
                     </div>
                 </section>
             </div>
@@ -56,21 +56,21 @@
                                 <span>Player 1</span>
                             </div>
                             <div class="info opponent-info">
-                                <img src="./assets/images/computer-chip-svgrepo-com.svg" alt="Opponent icon">
-                                <span>Opponent</span>
+                                <img id="opponentImg" src="./assets/images/computer-chip-svgrepo-com.svg" alt="Opponent icon">
+                                <span id="opponentName">Opponent</span>
                             </div>
                         </div>
                     </div>
                     <div class="gameboard">
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
-                        <div class="game-square"></div>
+                        <div data-square-num="0" class="game-square"></div>
+                        <div data-square-num="1" class="game-square"></div>
+                        <div data-square-num="2" class="game-square"></div>
+                        <div data-square-num="3" class="game-square"></div>
+                        <div data-square-num="4" class="game-square"></div>
+                        <div data-square-num="5" class="game-square"></div>
+                        <div data-square-num="6" class="game-square"></div>
+                        <div data-square-num="7" class="game-square"></div>
+                        <div data-square-num="8" class="game-square"></div>
                     </div>
                 </section>
             </div>
