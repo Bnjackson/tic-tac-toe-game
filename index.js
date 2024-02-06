@@ -1,7 +1,6 @@
 "use strict";
 
-// GAME START SCREEN
-
+// GAME START SCREEN 
 let gameChoices = document.querySelectorAll('.game-choices-container');
 const startGameBtn = document.querySelector('#startGameBtn');
 let userChoice = "";
@@ -47,7 +46,6 @@ const gameState = {
     currentTurn : 'player1',
 }
 
-
 function startGame(userChoice) {
     const gameOptionsScreen = document.querySelector('.game-options-screen');
     const gameScreen = document.querySelector('.game-screen');
@@ -55,12 +53,10 @@ function startGame(userChoice) {
     gameOptionsScreen.style.display = "none";
     gameScreen.style.display = "block";
     for (let i = 0; i < gameSquares.length; i++) {
-        gameSquares[i].addEventListener('click', (event) => {
+        gameSquares[i].addEventListener('click', async (event) => {
             if (!event.currentTarget.classList.contains("cross-placed") && !event.currentTarget.classList.contains("nought-placed")) {
-                console.log(event.currentTarget.classList);
                 addPieceToBoard(event);
             }
-
         });
     }
     if (userChoice === 'playerVsComputer') {
@@ -89,18 +85,40 @@ function addPieceToBoard(event) {
         gameState.currentTurn = 'player1';
     }
     checkForEndGame();
+    
 }
 
 function checkForEndGame() {
     if (gameState.gameboard[0] === 'x' && gameState.gameboard[1] === 'x' && gameState.gameboard[2] === 'x' || gameState.gameboard[3] === 'x' && gameState.gameboard[4] === 'x' && gameState.gameboard[5] === 'x' || gameState.gameboard[6] === 'x' && gameState.gameboard[7] === 'x' && gameState.gameboard[8] === 'x' || gameState.gameboard[0] === 'x' && gameState.gameboard[3] === 'x' && gameState.gameboard[6] === 'x' || gameState.gameboard[1] === 'x' && gameState.gameboard[4] === 'x' && gameState.gameboard[7] === 'x' || gameState.gameboard[2] === 'x' && gameState.gameboard[5] === 'x' && gameState.gameboard[8] === 'x' || gameState.gameboard[0] === 'x' && gameState.gameboard[4] === 'x' && gameState.gameboard[8] === 'x' || gameState.gameboard[2] === 'x' && gameState.gameboard[4] === 'x' && gameState.gameboard[6] === 'x') {
-        
-        resetGameBoard();
+        console.log('Player1 wins round');
+        displayWinner('player1');
     } else if (gameState.gameboard[0] === '0' && gameState.gameboard[1] === '0' && gameState.gameboard[2] === '0' || gameState.gameboard[3] === '0' && gameState.gameboard[4] === '0' && gameState.gameboard[5] === '0' || gameState.gameboard[6] === '0' && gameState.gameboard[7] === '0' && gameState.gameboard[8] === '0' || gameState.gameboard[0] === '0' && gameState.gameboard[3] === '0' && gameState.gameboard[6] === '0' || gameState.gameboard[1] === '0' && gameState.gameboard[4] === '0' && gameState.gameboard[7] === '0' || gameState.gameboard[2] === '0' && gameState.gameboard[5] === '0' && gameState.gameboard[8] === '0' || gameState.gameboard[0] === '0' && gameState.gameboard[4] === '0' && gameState.gameboard[8] === '0' || gameState.gameboard[2] === '0' && gameState.gameboard[4] === '0' && gameState.gameboard[6] === '0') {
-        
-        resetGameBoard();
+        console.log('Player2 wins round');
+        displayWinner('player2');
     }
 }
 
-function resetGameBoard() {
+function displayWinner(winner) {
+    const winnerModal = document.querySelector('#winnerModal');
+    const winnerMessage = document.querySelector('#winnerMessage');
+    if (winner === 'player1') {
+        winnerMessage.textContent = 'Player 1 wins!';
+    } else if (winner === 'player2') {
+        winnerMessage.textContent = 'Player 2 wins!';
+    }
+    winnerModal.style.display = 'flex';
+    setTimeout(() => {
+        winnerModal.style.display = 'None';
+        resetGame();
+    }, 1500);
+}
 
+function resetGame() {
+    const gameSquares = document.querySelectorAll('.game-square');
+    gameState.gameboard = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    gameState.currentTurn = 'player1';
+    for (let i = 0; i < gameSquares.length; i++) {
+        gameSquares[i].classList.remove('cross-placed');
+        gameSquares[i].classList.remove('nought-placed');
+    }
 }
