@@ -64,12 +64,29 @@ button {
     font-weight: 700;
 }
 
+.winner-modal span {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
 /*
 COLOURS
 */
 .game-choices-container {
     background-color: #f0f0f0;
 }
+
+.game-square {
+    background-color: #e2e8f0;
+}
+
+.winner-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #e2e8f0;
+}
+
 /*
 IMAGES
 */
@@ -175,5 +192,26 @@ GAME SCREEN
 .game-square {
     width: 100%;
     padding-top: 100%;
-    background-color: #e2e8f0;
+}
+
+.winner-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    padding: 20px;
+    max-width: 300px;
+    height: 120px; 
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,.16), 0 0 15px rgba(0,0,0,.23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
